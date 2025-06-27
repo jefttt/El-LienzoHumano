@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estilos</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Old+English+Text+MT&display=swap');
+        h1 {
+            font-family: 'Old English Text MT', 'UnifrakturCook', cursive, serif;
+        }
+        :root {
+            --gris-oscuro: #222;
+            --gris-medio: #444;
+            --gris-claro: #e0e0e0;
+            --gris-boton: #555;
+            --gris-slider: #333;
+            --blanco: #fff;
+        }
+        body {
+            margin: 0;
+            font-family: 'UnifrakturCook', cursive;
+            background: linear-gradient(rgba(224, 224, 224, 0), rgba(224, 224, 224, 0)),
+                url('https://i.pinimg.com/736x/34/ea/78/34ea78145ed139f7df5bc655db7f3d98.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--gris-oscuro);
+            font-size: 20px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2vw;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box;
+        }
+        header > div:first-child {
+            font-size: 2rem;
+            margin-bottom: 0;
+            text-align: left;      /* Alinea el texto a la izquierda */
+            flex: 1 1 auto;        /* Permite que ocupe solo el espacio necesario */
+        }
+        .botones-header {
+            display: flex;
+            gap: 1rem;
+        }
+        .botones-header button {
+            background: var(--gris-boton);
+            color: var(--blanco);
+            border: none;
+            padding: 0.5rem 1.2rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .botones-header button:hover {
+            background: var(--gris-medio);
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 90px;
+            min-height: 70vh;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+        .contenido {
+            flex: 1 1 350px;
+            min-width: 300px;
+            max-width: 500px;
+            padding: 2.5rem;
+            background: #ffffff38;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            opacity: 0.98;
+            box-sizing: border-box;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        details {
+            background: var(--blanco);
+            border: 1px solid var(--gris-medio);
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+        summary {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1.5rem 1rem 1rem 1rem;
+        }
+        summary img {
+            width: 280px !important;
+            height: 280px !important;
+            border-radius: 32px !important;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        summary span {
+            font-size: 2.2rem !important;
+            font-weight: bold;
+        }
+        footer {
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 1.2rem 0;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            letter-spacing: 1px;
+        }
+        .fila-sections {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+        section.contenido {
+            flex: 1 1 350px;
+            min-width: 300px;
+            max-width: 500px;
+            padding: 2.5rem;
+            background: #ffffff1e;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            opacity: 0.98;
+            box-sizing: border-box;
+            margin-bottom: 0;
+        }
+        @media (max-width: 1100px) {
+            .fila-sections {
+                gap: 1rem;
+            }
+            section.contenido {
+                max-width: 400px;
+                min-width: 220px;
+                padding: 1.5rem;
+            }
+            summary img {
+                width: 170px !important;
+                height: 170px !important;
+            }
+            summary, summary span {
+                font-size: 1.5rem !important;
+            }
+        }
+        @media (max-width: 900px) {
+            .fila-sections {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.2rem;
+            }
+            section.contenido {
+                width: 95vw;
+                max-width: 98vw;
+                min-width: 0;
+            }
+        }
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 1vw;
+            }
+            .botones-header {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 500px) {
+            .botones-header {
+                gap: 0.2rem;
+            }
+            .botones-header button {
+                padding: 0.3rem 0.5rem;
+                font-size: 0.95rem;
+                min-width: 70px;
+                max-width: 90px;
+            }
+        }
+        img{
+            width: 200px;
+        }
+        .dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background: var(--gris-boton);
+    color: var(--blanco);
+    border: none;
+    padding: 0.5rem 1.2rem;
+    font-family: inherit;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dropbtn:hover, .dropdown:hover .dropbtn {
+    background: var(--gris-medio);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--blanco);
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    z-index: 1;
+    border-radius: 6px;
+    overflow: hidden;
+    right: 0;
+}
+.dropdown-content a {
+    color: var(--gris-oscuro);
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+.dropdown-content a:hover {
+    background-color: var(--gris-claro);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+@media (max-width: 700px) {
+    .dropdown-content {
+        left: 0;
+        right: auto;
+        min-width: 120px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-size:2rem;">El lienzo humano</div>
+        <!-- Solo la parte de los botones del header, listos para usar en cualquier header -->
+        <div class="botones-header">
+            <button onclick="location.href='inicio.html'">Inicio</button>
+            <div class="dropdown">
+                <button class="dropbtn">Estilos ▼</button>
+                <div class="dropdown-content">
+                    <a href="tradicional.html">Tradicional</a>
+                    <a href="japones.html#japones">Japonés</a>
+                    <a href="BlackAndGray.html">Black and Gray</a>
+                    <a href="lettering.html">Lettering</a>
+                    <a href="blackwork.html#blackwork">Blackwork</a>
+                    <a href="Noetradi.html#neotradicional">Neo Tradicional</a>
+                    <a href="fullcolor.html">Full Color</a>
+                    <a href="newschool.html#newschool">New School</a>
+                </div>
+            </div>
+            <button onclick="location.href='contacto.html'">Contacto</button>
+        </div>
+    </header>
+   <main>
+    <div class="fila-sections">
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="tradi.jpg" alt="Tradicional" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">Tradicional</span>
+                </summary>
+                <p>El estilo tradicional en el tatuaje, también conocido como Old School, es un estilo clásico que surgió a finales del siglo XIX y se popularizó a mediados del siglo XX, especialmente entre marineros, soldados y motociclistas. <br>
+<br>Características principales: <br>
+    <br>Líneas negras gruesas: delimitan y dan estructura firme al diseño.<br>
+    <br>Colores sólidos y vibrantes: como rojo, verde, amarillo y azul, sin degradados.<br>
+    <br>Sombra mínima o nula: se enfoca más en el contorno que en el realismo.<br>
+    <br>Diseños icónicos y simbólicos: anclas, corazones, rosas, calaveras, golondrinas, dagas, pin-ups, banderas, entre otros.<br>
+    <br>Significado fuerte: suelen representar lealtad, amor, valentía, patriotismo o recuerdos personales.</p>
+            </details>
+        </section>
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="japones.jpg" alt="Japonés" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">Japonés</span>
+                </summary>
+                <p>El estilo japonés se caracteriza por:<br>
+    Diseños grandes y narrativos, que suelen cubrir grandes áreas del cuerpo (espalda, brazos, pecho, piernas) con composiciones que cuentan una historia visual.<br>
+    <br>Temática mitológica y natural, con elementos tradicionales como:<br>
+        <br>Dragones, koi (carpas), tigre, fénix – simbolizan fuerza, valentía o transformación.<br>
+        <br>Samuráis, geishas, oni (demonios) – representan valores como el honor, la lucha o el equilibrio entre el bien y el mal.<br>
+        <br>Flores como peonías, crisantemos y flores de cerezo – añaden significado estacional y estético.<br>
+    <br>Contornos gruesos y colores planos con sombreado suave, generando contraste visual y durabilidad con el tiempo.<br>
+    <br>Fondo tradicional, como olas, viento, nubes o llamas, que unifican la composición del tatuaje.</p>
+            </details>
+        </section>
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="black and gray.jpg" alt="Black and Gray" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">Black and Gray</span>
+                </summary>
+                <p>el Black and Gray es un estilo artístico que se caracteriza por el uso exclusivo de tinta negra, aplicada en diferentes grados de dilución para crear sombras, profundidad y contrastes sin utilizar colores.<br>
+<br>Características principales del Black and Gray:<br>
+    <br>Tinta negra diluida: Se mezcla con agua destilada u otros diluyentes para obtener una gama de tonos grises, desde el negro sólido hasta grises muy claros.<br>
+    <br>Sombras suaves: Permite lograr un efecto más realista y tridimensional, ideal para retratos, escenas religiosas, iconografía chicana, animales, paisajes y más.<br>
+    <br>Estética monocromática: Al no usar colores, se enfoca en el contraste de luces y sombras para generar emoción y detalle visual.<br>
+    <br>Durabilidad: Los tatuajes en Black and Gray tienden a envejecer mejor que los de color, ya que el negro resiste más el paso del tiempo en la piel.</p>
+            </details>
+        </section>
+    </div>
+    <div class="fila-sections">
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="images.jpg" alt="Lettering" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">Lettering</span>
+                </summary>
+                <p>El estilo "lettering" en el tatuaje se refiere a un tipo de tatuaje centrado en letras, palabras o frases, con un diseño tipográfico cuidado y artístico. No se trata solo de escribir un texto, sino de darle personalidad, emoción y estilo visual mediante la forma en que se dibujan las letras.<br>
+<br>Características clave del estilo lettering en tatuajes:
+    <br>Tipografías personalizadas: Puede usar estilos como cursiva, gótica, caligráfica, manuscrita, serif o sans serif.<br>
+    <br>Diseño artístico: Las letras pueden tener sombras, ornamentos, curvas o efectos decorativos que aportan expresividad.<br>
+    <br>Mensajes significativos: Suelen usarse para frases motivacionales, nombres, citas, fechas importantes o palabras con carga emocional.<br>
+    <br>Precisión: Requiere gran habilidad técnica para que las letras sean legibles y estéticamente armoniosas.</p>
+            </details>
+        </section>
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="blackwork.webp" alt="Blackwork" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">Blackwork</span>
+                </summary>
+                <p>El estilo Blackwork en el tatuaje es una técnica que se caracteriza por el uso exclusivo del tinta negra sólida, sin color ni sombreado a color. Se basa en grandes áreas de negro, líneas gruesas, patrones geométricos, mandalas, simbología o diseños tribales, creando tatuajes de fuerte contraste y alto impacto visual.<br>
+<br>Características clave del estilo Blackwork:
+    <br>Uso exclusivo de tinta negra: Sin mezclas de color; el enfoque está en el contraste entre tinta y piel.<br>
+    <br>Diseños sólidos y atrevidos: Puede incluir patrones repetitivos, figuras abstractas, símbolos o ilustraciones detalladas.<br>
+    <br>Influencias diversas: Toma inspiración de estilos antiguos como el tribal, el arte sacro, grabados medievales o incluso el arte moderno.<br>
+    <br>Versatilidad estética: Va desde composiciones simples hasta piezas complejas que cubren grandes zonas del cuerpo.</p>
+            </details>
+        </section>
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="neo4.jpg" alt="Neo Tradicional" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">Neo Tradicional</span>
+                </summary>
+                <p>El estilo neo tradicional en el tatuaje es una evolución del estilo tradicional (o "old school"), combinando sus bases clásicas con técnicas y detalles modernos. Se caracteriza por lo siguiente:<br>
+    <br>Líneas definidas y sólidas, como en el estilo tradicional.<br>
+    <br>Paleta de colores más amplia y rica, incluyendo degradados y sombreados suaves.<br>
+    <br>Mayor nivel de detalle y realismo, especialmente en rostros, animales, flores y elementos decorativos.<br>
+    <br>Elementos ornamentales como marcos, perlas, filigranas o motivos art nouveau.<br>
+    <br>Influencia artística variada, incluyendo el arte clásico, el modernismo y el surrealismo.</p>
+            </details>
+        </section>
+    </div>
+    <div class="fila-sections">
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="full-color.jpg" alt="Full Color" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">Full Color</span>
+                </summary>
+                <p>El estilo full color en el tatuaje se refiere a aquellos diseños que utilizan una amplia gama de colores intensos y saturados, cubriendo la mayor parte del diseño sin dejar zonas sin tinta o con piel visible. No es un estilo artístico específico, sino una forma de aplicación del color que puede estar presente en diferentes estilos (como new school, neo tradicional, realismo, entre otros). <br>
+<br>Características principales:<br>
+    <br>Uso de múltiples colores vivos y brillantes, a menudo en combinaciones llamativas.<br>
+    <br>Cobertura completa del área tatuada, con poco o ningún espacio negativo.<br>
+    <br>Degradados y transiciones suaves entre tonos para dar profundidad y volumen.<br>
+    <br>Enfoque visual fuerte, diseñado para destacar a simple vista.</p>
+            </details>
+        </section>
+        <section class="contenido">
+            <details>
+                <summary style="display: flex; flex-direction: column; align-items: center; gap: 0.7rem;">
+                    <img src="new-school.jpg" alt="New school" style="width:190px; height:190px; border-radius:16px; object-fit:cover;">
+                    <span style="font-size:1.5rem; font-weight:bold;">New school</span>
+                </summary>
+                <p>El estilo New School en el tatuaje es un estilo moderno y llamativo que se originó en los años 80 y 90, y se caracteriza por su estética caricaturesca y exagerada. Sus principales características son: <br>
+    <br>Colores vibrantes y saturados, con alto contraste.<br>
+    <br>Líneas gruesas y definidas, similares al estilo tradicional, pero con mayor dinamismo.<br>
+    <br>Diseños exagerados y caricaturescos, a menudo con proporciones distorsionadas.<br>
+    <br>Temáticas creativas y poco convencionales, como personajes de fantasía, dibujos animados, animales antropomorfos o figuras pop.<br>
+    <br>Sombras y degradados intensos, que dan profundidad y volumen al diseño.</p>
+            </details>
+        </section>
+    </div>
+</main>
+
+    <footer>
+        &copy; 2025 El lienzo humano. Todos los derechos reservados.
+    </footer>
+</body>
+</html>

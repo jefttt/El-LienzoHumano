@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>El lienzo humano</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gris-oscuro: #222;
+            --gris-medio: #444;
+            --gris-claro: #e0e0e0;
+            --gris-boton: #555;
+            --blanco: #fff;
+        }
+        body {
+            min-height: 100vh;
+            font-family: 'UnifrakturCook', cursive;
+            background: linear-gradient(rgba(68, 68, 68, 0), rgba(73, 73, 73, 0)),
+                url('https://i.pinimg.com/736x/34/ea/78/34ea78145ed139f7df5bc655db7f3d98.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--gris-oscuro);
+            font-size: 20px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2vw;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box;
+        }
+        .botones-header {
+            display: flex;
+            gap: 1rem;
+        }
+        .botones-header button, .dropbtn {
+            background: var(--gris-boton);
+            color: var(--blanco);
+            border: none;
+            padding: 0.5rem 1.2rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .botones-header button:hover, .dropbtn:hover {
+            background: var(--gris-medio);
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--blanco);
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            z-index: 1;
+            border-radius: 6px;
+            overflow: hidden;
+            right: 0;
+        }
+        .dropdown-content a {
+            color: var(--gris-oscuro);
+            padding: 0.7rem 1.2rem;
+            text-decoration: none;
+            display: block;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .dropdown-content a:hover {
+            background-color: var(--gris-claro);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        main {
+            margin-top: 110px;
+            min-height: 70vh;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+        .fila-sections {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+        section.contenido {
+            flex: 1 1 350px;
+            min-width: 220px;
+            max-width: 350px;
+            padding: 1.5rem;
+            background: #ffffffcc;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            opacity: 0.98;
+            box-sizing: border-box;
+            margin-bottom: 0;
+        }
+        details {
+            background: var(--blanco);
+            border: 1px solid var(--gris-medio);
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 4px rgba(185, 185, 185, 0.15);
+            font-size: 1.2rem;
+        }
+        summary {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1rem 1rem 0.7rem 1rem;
+            cursor: pointer;
+            background: var(--gris-claro);
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        summary img {
+            width: 170px;
+            height: 170px;
+            border-radius: 16px;
+            object-fit: cover;
+            margin-bottom: 0.5rem;
+        }
+        summary span {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        footer {
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 1.2rem 0;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            letter-spacing: 1px;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+        @media (max-width: 900px) {
+            .fila-sections {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.2rem;
+            }
+            section.contenido {
+                width: 95vw;
+                max-width: 98vw;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-size:2rem;">Neo Tradi</div>
+        <div class="botones-header">
+            <button onclick="location.href='inicio.html'">Inicio</button>
+            <div class="dropdown">
+                <button class="dropbtn">Estilos ▼</button>
+                <div class="dropdown-content">
+                    <a href="tradicional.html">Tradicional</a>
+                    <a href="japones.html#japones">Japonés</a>
+                    <a href="estilos.html#blackandgray">Black and Gray</a>
+                    <a href="lettering.html">Lettering</a>
+                    <a href="blackwork.html">Blackwork</a>
+                    <a href="Noetradi.html">Neo Tradicional</a>
+                    <a href="fullcolor.html">Full Color</a>
+                    <a href="newschool.html">New School</a>
+                </div>
+            </div>
+            <button onclick="location.href='contacto.html'">Contacto</button>
+        </div>
+    </header>
+    <main>
+        <!-- 15 sections desplegables, 3 por fila excepto la última -->
+        <div class="fila-sections">
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo.jpg" alt="Imagen 1">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo1.jpg" alt="Imagen 2">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo2.jpg" alt="Imagen 3">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+        </div>
+        <div class="fila-sections">
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo3.jpg" alt="Imagen 4">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo4.jpg" alt="Imagen 5">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo5.jpg" alt="Imagen 6">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+        </div>
+        <div class="fila-sections">
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo6.jpg" alt="Imagen 7">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo7.jpg" alt="Imagen 8">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="neo8.jpg" alt="Imagen 9">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+        </div>
+    </main>
+    <footer>
+        &copy; 2025 El lienzo humano. Todos los derechos reservados.
+    </footer>
+</body>
+</html>

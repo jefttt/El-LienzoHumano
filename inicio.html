@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Maquetación Página Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Old+English+Text+MT&display=swap');
+        h1 {
+            font-family: 'Old English Text MT', 'UnifrakturCook', cursive, serif;
+        }
+        :root {
+            --gris-oscuro: #222;
+            --gris-medio: #444;
+            --gris-claro: #e0e0e0;
+            --gris-boton: #555;
+            --gris-slider: #333;
+            --blanco: #fff;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            font-family: 'UnifrakturCook', cursive;
+            background: linear-gradient(rgba(68, 68, 68, 0), rgba(73, 73, 73, 0)),
+                url('https://i.pinimg.com/736x/34/ea/78/34ea78145ed139f7df5bc655db7f3d98.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--gris-oscuro);
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2vw;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box;
+        }
+        .botones-header {
+            display: flex;
+            gap: 1rem;
+        }
+        .botones-header button {
+            background: var(--gris-boton);
+            color: var(--blanco);
+            border: none;
+            padding: 0.5rem 1.2rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .botones-header button:hover {
+            background: var(--gris-medio);
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 90px;
+            min-height: 70vh;
+            width: 100vw;
+            box-sizing: border-box;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        .contenido {
+            flex: 2 1 350px;
+            min-width: 280px;
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem 1.5rem;
+            background: #ffffff00;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            opacity: 0.97;
+            margin-bottom: 2rem;
+            box-sizing: border-box;
+        }
+        details {
+            background: var(--blanco);
+            border: 1px solid var(--gris-medio);
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 4px rgba(185, 185, 185, 0.603);
+            font-size: 1.5rem;
+        }
+        summary {
+            font-size: 1.7rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 1rem;
+            background: var(--gris-claro);
+            border-radius: 6px 6px 0 0;
+        }
+        .slider-lateral {
+            width: 350px;
+            min-width: 220px;
+            max-width: 98vw;
+            background: var(--gris-slider);
+            color: var(--blanco);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+            margin-left: 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            box-sizing: border-box;
+        }
+        .slider-imagen {
+            width: 100%;
+            height: 260px;
+            background: var(--gris-medio);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+        .slider-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .slider-controles {
+            display: flex;
+            gap: 1rem;
+        }
+        .slider-controles button {
+            background: var(--gris-boton);
+            color: var(--blanco);
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .slider-controles button:hover {
+            background: var(--gris-medio);
+        }
+        footer {
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 1.2rem 0;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            letter-spacing: 1px;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+        @media (max-width: 1200px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contenido, .slider-lateral {
+                max-width: 98vw;
+            }
+            .slider-lateral {
+                margin-left: 0;
+                margin-top: 2rem;
+                position: static;
+            }
+        }
+        @media (max-width: 900px) {
+            .slider-lateral {
+                width: 98vw;
+                min-width: unset;
+                padding: 1.5rem 0.5rem;
+            }
+            .slider-imagen {
+                height: 180px;
+            }
+        }
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 1vw;
+            }
+            .contenido {
+                padding: 1rem 0.5rem;
+            }
+            .slider-lateral {
+                width: 98vw;
+                min-width: unset;
+                padding: 1rem 0.2rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .slider-imagen {
+                height: 120px;
+            }
+            .slider-lateral {
+                padding: 0.7rem 0.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-size:2rem;">El lienzo humano</div>
+        <div class="botones-header">
+            <button onclick="location.href='inicio.html'">Inicio</button>
+            <button onclick="location.href='estilos.html'">Estilos</button>
+            <button onclick="location.href='contacto.html'">Contacto</button>
+        </div>
+    </header>
+    <main>
+        <section class="contenido">
+            <details open>
+                <summary>¿Que son los tatuajes?</summary>
+                <p>Un tatuaje es una forma de modificación corporal permanente que consiste en insertar pigmentos en la dermis —la capa media de la piel— mediante agujas u otros instrumentos, con el fin de crear diseños, símbolos o textos que reflejan aspectos personales, culturales o espirituales. Esta práctica milenaria ha estado presente en diversas culturas alrededor del mundo, desempeñando roles que van desde lo estético hasta lo ritual y simbólico.</p>
+            </details>
+            <details>
+                <summary>🧬 Origen y evolución histórica</summary>
+                <p>La evidencia más antigua de tatuajes se encuentra en la momia de Ötzi, un hombre neolítico de más de 5,000 años de antigüedad descubierto en los Alpes de Ötztal. Su cuerpo presenta 61 tatuajes, posiblemente relacionados con tratamientos terapéuticos como la acupuntura.<br>
+                    En el Antiguo Egipto, los tatuajes se asociaban con rituales religiosos y símbolos de estatus social, especialmente entre las sacerdotisas. Por otro lado, en culturas como la china y la romana, los tatuajes se utilizaban para marcar a criminales y esclavos, sirviendo como herramientas de estigmatización social.</p>
+            </details>
+            <details>
+                <summary>🌍 Significado cultural y simbólico</summary>
+                <p>A lo largo de la historia, los tatuajes han tenido diversos significados según la cultura:
+                <br>Maoríes de Nueva Zelanda:<br> El tā moko es una forma de tatuaje que representa la identidad, el linaje y el estatus social. Estos tatuajes se tallaban en la piel con herramientas tradicionales, dejando surcos distintivos.
+                latintadefonti.com+1es.wikipedia.org+1
+                <br>Culturas asiáticas:<br> En países como Tailandia y Camboya, los tatuajes realizados por monjes budistas contienen símbolos sagrados y escrituras que se cree ofrecen protección espiritual.
+                acento.com.do
+                <br>Mesoamérica:<br> En el México prehispánico, los tatuajes y otras formas de modificación corporal eran comunes y estaban relacionados con festividades, ciclos agrícolas y ritos de paso.</p>
+            </details>
+            <details>
+                <summary>🧭 Impacto de los tatuajes a lo largo de la historia</summary>
+                <p>🏺 Antigüedad (antes de Cristo)<br>
+    Práctica ancestral: Se han hallado momias tatuadas de más de 5,000 años, como Ötzi, el Hombre de Hielo. Sus tatuajes tenían fines terapéuticos o rituales.
+    En Egipto, las mujeres se tatuaban por motivos religiosos y como símbolo de estatus o fertilidad.
+    En China y Roma, los tatuajes se usaban para marcar criminales o esclavos, lo que les dio una connotación de castigo o marginalización.<br>
+📌 Impacto: Diversidad de usos; desde medicina primitiva y rituales religiosos hasta mecanismos de control social.<br>
+⚔️ Edad Media y culturas tribales<br>
+    En la Europa cristiana medieval, el tatuaje fue prohibido por la Iglesia por considerarse pagano o profano.
+    En contraste, pueblos como los maoríes, samoanos, filipinos y tribus africanas usaban tatuajes como parte esencial de su identidad cultural, social y espiritual.<br>
+📌 Impacto: Mientras que Occidente lo reprimía, en otras culturas era un símbolo de honor, madurez, protección o jerarquía social.<br>
+🚢 Siglos XVI al XIX – Exploración y colonización<br>
+    Los exploradores europeos como James Cook observaron los tatuajes en la Polinesia y popularizaron el término tatau.
+    Marineros, soldados y aventureros europeos comenzaron a tatuarse, relacionando los tatuajes con la vida en el mar, el coraje y la rebeldía.
+    Durante este periodo, los tatuajes se vincularon a clases sociales bajas, presos y marginados.<br>
+📌 Impacto: Expansión global, pero con una reputación ambigua: símbolo de libertad para algunos, estigma para otros.<br>
+🧑‍🎤 Siglo XX – Estigma, contracultura y transformación<br>
+    Durante gran parte del siglo XX, los tatuajes fueron mal vistos en sociedades occidentales: asociados a delincuentes, marineros, pandilleros y motociclistas.
+    En los años 60-80, los movimientos de contracultura, punk y rock los rescatan como símbolos de rebeldía y expresión individual.
+    Empieza la profesionalización de artistas del tatuaje y se desarrollan estilos artísticos (japonés, tradicional americano, realismo, etc.).<br>
+📌 Impacto: El tatuaje pasa de ser marginal a convertirse en una forma de arte corporal y protesta social.<br>
+🌐 Siglo XXI – Normalización y arte personal<br>
+    Hoy en día, el tatuaje es una forma de expresión personal aceptada en la mayoría de las culturas occidentales.
+    Ha entrado en museos, pasarelas de moda y redes sociales. Incluso se practica con fines médicos (micropigmentación, camuflaje de cicatrices).
+    Aunque aún hay estigmas en ciertos contextos (por ejemplo, en Japón o en ambientes laborales conservadores), ha alcanzado un estatus artístico y simbólico global.<br>
+📌 Impacto: De símbolo de marginalidad a forma de arte reconocida, respetada y universal.</p>
+            </details>
+        </section>
+        <aside class="slider-lateral">
+            <div class="slider-imagen" id="slider-imagen">
+                Imagen 1
+            </div>
+            <div class="slider-controles">
+                <button onclick="cambiarImagen(-1)">&#8592;</button>
+                <button onclick="cambiarImagen(1)">&#8594;</button>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        &copy; 2025 El lienzo humano. Todos los derechos reservados.
+    </footer>
+    <script>
+        // Rutas de tus 6 imágenes (ajusta las rutas si están en una carpeta)
+        const imagenes = [
+            'slider-1.jpg',
+            'slider-2.jpg',
+            'slider-3.jpg',
+            'slider-4.jpg',
+            'slider-5.jpg',
+            'slider-6.jpg'
+        ];
+        let indice = 0;
+        function cambiarImagen(dir) {
+            indice = (indice + dir + imagenes.length) % imagenes.length;
+            document.getElementById('slider-imagen').innerHTML =
+                `<img src="${imagenes[indice]}" alt="Imagen ${indice+1}" style="width:100%;height:100%;object-fit:cover;border-radius:6px;">`;
+        }
+        // Mostrar la primera imagen al cargar
+        window.onload = function() {
+            cambiarImagen(0);
+        };
+    </script>
+</body>
+</html>

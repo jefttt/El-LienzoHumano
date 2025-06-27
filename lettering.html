@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva Página - El lienzo humano</title>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Old+English+Text+MT&display=swap');
+        h1 {
+            font-family: 'Old English Text MT', 'UnifrakturCook', cursive, serif;
+        }
+        :root {
+            --gris-oscuro: #222;
+            --gris-medio: #444;
+            --gris-claro: #e0e0e0;
+            --gris-boton: #555;
+            --gris-slider: #333;
+            --blanco: #fff;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            min-height: 100vh;
+            font-family: 'UnifrakturCook', cursive;
+            background: linear-gradient(rgba(68, 68, 68, 0), rgba(73, 73, 73, 0)),
+                url('https://i.pinimg.com/736x/34/ea/78/34ea78145ed139f7df5bc655db7f3d98.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--gris-oscuro);
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2vw;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box;
+        }
+        .botones-header {
+            display: flex;
+            gap: 1rem;
+        }
+        .botones-header button {
+            background: var(--gris-boton);
+            color: var(--blanco);
+            border: none;
+            padding: 0.5rem 1.2rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .botones-header button:hover {
+            background: var(--gris-medio);
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 110px;
+            min-height: 70vh;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+        .fila-sections {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-sizing: border-box;
+        }
+        section.contenido {
+            flex: 1 1 350px;
+            min-width: 300px;
+            max-width: 500px;
+            padding: 2.5rem;
+            background: #ffffffcc;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            opacity: 0.98;
+            box-sizing: border-box;
+            margin-bottom: 0;
+        }
+        details {
+            background: var(--blanco);
+            border: 1px solid var(--gris-medio);
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 4px rgba(185, 185, 185, 0.15);
+            font-size: 1.5rem;
+        }
+        summary {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 1.5rem 1rem 1rem 1rem;
+            cursor: pointer;
+            background: var(--gris-claro);
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        summary img {
+            width: 230px;
+            height: 230px;
+            border-radius: 24px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        summary span {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+        @media (max-width: 1200px) {
+            .fila-sections {
+                gap: 1rem;
+            }
+            section.contenido {
+                max-width: 400px;
+                min-width: 220px;
+                padding: 1.5rem;
+            }
+            summary img {
+                width: 170px;
+                height: 170px;
+            }
+            summary, summary span {
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 900px) {
+            .fila-sections {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.2rem;
+            }
+            section.contenido {
+                width: 95vw;
+                max-width: 98vw;
+                min-width: 0;
+            }
+        }
+        footer {
+            background: var(--gris-oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 1.2rem 0;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            letter-spacing: 1px;
+            width: 100vw;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="font-size:2rem;">Lettering</div>
+        <div class="botones-header">
+            <button onclick="location.href='inicio.html'">Inicio</button>
+            <button onclick="location.href='estilos.html'">Estilos</button>
+            <button onclick="location.href='contacto.html'">Contacto</button>
+        </div>
+    </header>
+    <main>
+        <!-- 30 sections desplegables, 3 por fila -->
+        <div class="fila-sections">
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="image.jpg" alt="Imagen 1">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="images.jpg" alt="Imagen 2">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="images2.jpg" alt="Imagen 3">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+        </div>
+        <div class="fila-sections">
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="images3.jpg" alt="Imagen 4">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="images4.jpg" alt="Imagen 5">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="images5.jpg" alt="Imagen 6">
+                        <span></span>
+                    </summary>
+
+                </details>
+            </section>
+        </div>
+        <div class="fila-sections">
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="imagesr.jpg" alt="Imagen 7">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="images7.jpg" alt="Imagen 8">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+            <section class="contenido">
+                <details>
+                    <summary>
+                        <img src="images6.jpg" alt="Imagen 9">
+                        <span></span>
+                    </summary>
+                </details>
+            </section>
+    </main>
+    <footer>
+        &copy; 2025 El lienzo humano. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
